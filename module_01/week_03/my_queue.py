@@ -11,20 +11,17 @@ class MyQueue:
 
     def enqueue(self, value):
         if self.is_full():
-            print('Queue is full!')
-            return
+            raise IndexError('Overflow!')
         self.__queue.append(value)
 
     def dequeue(self):
         if self.is_empty():
-            print('Queue is empty!')
-            return None
+            raise IndexError('Underflow!')
         return self.__queue.pop(0)
 
     def front(self):
         if self.is_empty():
-            print('Queue is empty!')
-            return None
+            raise IndexError('Underflow!')
         return self.__queue[0]
 
 

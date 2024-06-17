@@ -11,20 +11,17 @@ class MyStack:
 
     def push(self, value):
         if self.is_full():
-            print('Stack is full!')
-            return
+            raise IndexError('Overflow!')
         self.__stack.append(value)
 
     def pop(self):
         if self.is_empty():
-            print('Stack is empty!')
-            return None
+            raise IndexError('Underflow!')
         return self.__stack.pop()
 
     def top(self):
         if self.is_empty():
-            print('Stack is empty!')
-            return None
+            raise IndexError('Underflow!')
         return self.__stack[-1]
 
 
